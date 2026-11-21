@@ -4,24 +4,24 @@ import { useData } from './context/DataContext';
 // Public Experience
 import Navbar from './components/public/Navbar';
 import Footer from './components/public/Footer';
-import HomePage from './pages/public/HomePage';
-import BuyPage from './pages/public/BuyPage';
-import RentPage from './pages/public/RentPage';
-import SellPage from './pages/public/SellPage';
-import ContactPage from './pages/public/ContactPage';
+import HomePage from './views/public/HomePage';
+import BuyPage from './views/public/BuyPage';
+import RentPage from './views/public/RentPage';
+import SellPage from './views/public/SellPage';
+import ContactPage from './views/public/ContactPage';
 
 // Admin Experience
 import AdminLayout from './components/admin/AdminLayout';
-import OverviewDashboard from './pages/admin/OverviewDashboard';
-import CustomerCRM from './pages/admin/CustomerCRM';
-import PropertyInventory from './pages/admin/PropertyInventory';
-import PropertyMatching from './pages/admin/PropertyMatching';
-import CoAgentManagement from './pages/admin/CoAgentManagement';
-import DealsPipeline from './pages/admin/DealsPipeline';
-import FollowupsManager from './pages/admin/FollowupsManager';
-import EnquiriesInbox from './pages/admin/EnquiriesInbox';
-import ReportsAnalytics from './pages/admin/ReportsAnalytics';
-import SettingsPage from './pages/admin/SettingsPage';
+import OverviewDashboard from './views/admin/OverviewDashboard';
+import CustomerCRM from './views/admin/CustomerCRM';
+import PropertyInventory from './views/admin/PropertyInventory';
+import PropertyMatching from './views/admin/PropertyMatching';
+import CoAgentManagement from './views/admin/CoAgentManagement';
+import DealsPipeline from './views/admin/DealsPipeline';
+import FollowupsManager from './views/admin/FollowupsManager';
+import EnquiriesInbox from './views/admin/EnquiriesInbox';
+import ReportsAnalytics from './views/admin/ReportsAnalytics';
+import SettingsPage from './views/admin/SettingsPage';
 
 // Admin Modals
 import CustomerModal from './components/admin/CustomerModal';

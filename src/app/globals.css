@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-maroon-50: #fdf5f7;
+  --color-maroon-100: #f9e9ec;
+  --color-maroon-200: #f4d4da;
+  --color-maroon-300: #ebb5c1;
+  --color-maroon-400: #df8c9f;
+  --color-maroon-500: #d06580;
+  --color-maroon-600: #800020;
+  --color-maroon-700: #5b0e2d;
+  --color-maroon-800: #4a0c25;
+  --color-maroon-900: #400d22;
+  --color-maroon-950: #240511;
+
+  --color-gold-50: #fcfbf5;
+  --color-gold-100: #f3e5ab;
+  --color-gold-200: #f1df91;
+  --color-gold-300: #ebd169;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #c99b24;
+  --color-gold-600: #ab7a1a;
+  --color-gold-700: #895918;
+  --color-gold-800: #73481a;
+  --color-gold-900: #613c1a;
+
+  --color-beige-50: #fdfbf7;
+  --color-beige-100: #f7f3ea;
+  --color-beige-200: #efe6d5;
+  --color-beige-300: #e2d1b7;
+  --color-beige-400: #d2b893;
+  --color-beige-500: #c4a174;
+  --color-beige-600: #b5885c;
+  --color-beige-700: #976b49;
+  --color-beige-800: #7b583f;
+  --color-beige-900: #644935;
+
+  --font-serif: "Playfair Display", "Cinzel", serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --shadow-gold-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+  --shadow-maroon-glow: 0 0 15px rgba(91, 14, 45, 0.3);
+  --shadow-luxury-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  --animate-fadeIn: fadeIn 0.5s ease-out;
+  --animate-slideUp: slideUp 0.5s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--color-beige-200);
+  }
+
+  body {
+    background-color: var(--color-beige-50);
+    color: #171717;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+
+  ::selection {
+    background-color: var(--color-maroon-700);
+    color: var(--color-gold-400);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-beige-50);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-beige-300);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-maroon-600);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Hide scrollbar utility for horizontal carousels */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth focus rings */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--color-gold-400);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* Glass morphism utility */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--color-gold-300), var(--color-gold-400), #f5c842);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-maroon {
+    background: linear-gradient(135deg, var(--color-maroon-700), var(--color-maroon-900));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shadow-luxury {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.03);
+  }
+
+  .shadow-luxury-hover {
+    box-shadow: 0 20px 40px rgba(91,14,45,0.15), 0 0 0 1px rgba(212,175,55,0.2);
+  }
+}
